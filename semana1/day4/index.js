@@ -16,7 +16,7 @@ const array1 = array.map((el) => {
 })
 console.log(array1)
 
-const array2 = words.filter(word => word.includes('e') === word.length <= 5)
+const array2 = words.filter(word => word.includes('e') && word.length <= 5)
 console.log(array2)
 
 const array3 = names.sort((a, b) => {
