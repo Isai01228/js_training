@@ -1,0 +1,37 @@
+.opContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+
+.suma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
