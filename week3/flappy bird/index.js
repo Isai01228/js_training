@@ -7,8 +7,8 @@ const obstacules = []
 const images = {
     backg: "./image/background.png",
     bird: "./image/bird3.jpeg",
-    obs1: "./image/obs1.jpg",
-    obs2: "./image/obs2.png",
+    obs2: "./image/obs1.jpg",
+    obs1: "./image/obs2.png",
     obs3: "./image/obs3.png"
 }
 
@@ -37,7 +37,6 @@ class Background {
         )
     }
 }
-
 class Bird {
     constructor() {
         this.x = 50
@@ -56,12 +55,51 @@ class Bird {
     }
     isToching(pipe) {
         return (
-            this.x < pipe.width &&
+            this.x < pipe.x + pipe.width &&
             this.x + this.width > pipe.x &&
             this.y < pipe.y + pipe.height &&
             this.y + this.height > pipe.y
         )
     }
+}
+class Pipe {
+    constructor(y, height, imagetype) {
+        this.x = canvas.width
+        this.y = y
+        this.height = height
+        this.width = canvas.width / 6
+        this.image = new Image()
+        this.image2 = new Image()
+        this.image.src = images.obs1
+        this.image2.src = images.obs2
+        this.imagetype = imagetype
+    }
+    draw() {
+        this.x--
+            if (this.imagetype) {
+                ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
+            } else {
+                ctx.drawImage(this.image2, this.x, this.y, this.width, this.height)
+            }
+    }
+}
+
+function generatePipes() {
+    if (frames % 300 === 0) {
+        const max = 100
+        const min = 300
+        const ventanita = 20
+        const randomHeight = Math.floor(Math.random() * (max - min)) + min
+        obstacules.push(new Pipe(0, randomHeight, false))
+        obstacules.push(
+            new Pipe((canvas.height - randomHeight) + ventanita, randomHeight, true)
+        )
+        console.log(obstacules)
+    }
+}
+
+function drawPipes() {
+    obstacules.forEach(pipe => pipe.draw())
 }
 
 const background = new Background()
@@ -73,6 +111,9 @@ function update() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     background.draw()
     bird.draw()
+    generatePipes()
+    drawPipes()
+    checkColition()
 }
 document.addEventListener("keydown", ({ keyCode }) => {
     switch (keyCode) {
@@ -80,6 +121,22 @@ document.addEventListener("keydown", ({ keyCode }) => {
             bird.fly()
     }
 })
+
+function gameOver() {
+    clearInterval(interval)
+}
+
+function checkColition() {
+    if (bird.y >= canvas.height - bird.height) {
+        return gameOver()
+    }
+    obstacules.forEach((pipe, i) => {
+        if (pipe.x + pipe.width <= 0) {
+            obstacules.splice(i, 1)
+        }
+        bird.isToching(pipe) ? gameOver() : null
+    })
+}
 
 function start() {
     interval = setInterval(update, 1000 / 60)
