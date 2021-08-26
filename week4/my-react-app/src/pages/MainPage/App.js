@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import DrawCards from '../../components/drawCardComponent/drawCard'
 import {useHistory} from 'react-router-dom'
 
@@ -7,6 +7,12 @@ import './styles.css'
 const App = () => {
 
   const history = useHistory()
+  const [search, setSearch] = useState('')
+
+  const handleSearch = (e) =>{
+    console.log(e.target.value);
+        setSearch(e.target.value)
+  }
 
   const fakeDataArray = [
     {
@@ -146,15 +152,17 @@ const App = () => {
   <div>
       <div className= "searchBar" >
           <div>
-            <input type="search" name="search" id= "search" placeholder="search one card" />
-            <div onClick={()=> {history.push('/cards')}}>cards</div>
-            <div onClick={()=> {history.push('/aboutMy')}}>profile</div>
+            <input type="search" name="search" id= "search" placeholder="search one card" onChange={handleSearch} value={search} />
+                <div id= "pushRouter">
+                  <div onClick={()=> {history.push('/cards')}}>cards</div>
+                  <div id="cursor" onClick={()=> {history.push('/aboutMy')}}>profile</div>
+                </div>
           </div>
       </div>
       <div className="alignItems">
         {
           fakeDataArray.map(user => (
-            <DrawCards user={user} />
+            <DrawCards user={user} key={user.profile} />
           ))
         }
       </div>
