@@ -1,0 +1,38 @@
+img {
+    width: 20vw;
+    height: 40vh;
+    border-radius: 10px;
+}
+
+.greenClass {
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    margin-top: 25px;
+}
+
+.redClass {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    margin-top: 25px;
+}
+
+.yellowClass {
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    margin-top: 25px;
+}

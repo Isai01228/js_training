@@ -1,15 +1,14 @@
 import React from 'react'
-
-const DrawCards = ({user}) => {
-
-const {name, edad, isAlive, profile} = user
-
-    return (
-        <div>
-            <h1> {name} </h1>
-            <h3> The age from user is: {edad} </h3>
-            <h2>this person is: {isAlive} </h2>
-            <p> {profile} </p>
+import './styles.css'
+const DrawCards = ({ user }) => {
+    const { name, edad, isAlive, profile } = user
+    
+    return ( 
+        <div className={isAlive === `alive` ? `greenClass` :isAlive === `dead` ? `redClass` : `yellowClass`}>
+        <h1> { name } </h1>
+        <h3 > The age from user is: { edad } years </h3>
+        <h2 > This person are: { isAlive } </h2>
+        <img src = {profile} alt={`empty`} />
         </div>
     )
 }

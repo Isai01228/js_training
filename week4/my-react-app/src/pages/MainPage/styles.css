@@ -1,8 +1,12 @@
 .alignItems {
-    /* background-color: aqua; */
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.searchBar {
+    width: 100vw;
+    height: 10vh;
+    background-color: green;
 }
