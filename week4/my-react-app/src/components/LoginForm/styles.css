@@ -1,0 +1,41 @@
+#form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#loginButton {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#emailInput {
+    width: 20vw;
+    height: 3vh;
+    text-align: center;
+}
+
+#passwordInput {
+    width: 20vw;
+    height: 3vh;
+    text-align: center;
+}
+
+.formContainer {
+    width: 30vw;
+    height: 40vh;
+    margin-left: 35em;
+    margin-top: 20em;
+    background-color: burlywood;
+    display: flex;
+    align-content: center;
+}
+
+.allContainer {
+    width: 100vw;
+    height: 100vh;
+}

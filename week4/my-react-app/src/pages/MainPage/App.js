@@ -1,9 +1,12 @@
 import React from 'react'
 import DrawCards from '../../components/drawCardComponent/drawCard'
+import {useHistory} from 'react-router-dom'
 
 import './styles.css'
 
 const App = () => {
+
+  const history = useHistory()
 
   const fakeDataArray = [
     {
@@ -140,10 +143,14 @@ const App = () => {
     }
   ]
   return (
-    <div>
-    <div className= "searchBar" >
-    <div> hola aqui ando </div>
-    </div>
+  <div>
+      <div className= "searchBar" >
+          <div>
+            <input type="search" name="search" id= "search" placeholder="search one card" />
+            <div onClick={()=> {history.push('/cards')}}>cards</div>
+            <div onClick={()=> {history.push('/aboutMy')}}>profile</div>
+          </div>
+      </div>
       <div className="alignItems">
         {
           fakeDataArray.map(user => (
@@ -151,7 +158,7 @@ const App = () => {
           ))
         }
       </div>
-    </div>
+  </div>
   )
 }
 
