@@ -1,0 +1,38 @@
+#randomButton {
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    height: 12vh;
+    width: 7vw;
+}
+
+#pokeName {
+    font-size: 42px;
+    font-style: italic;
+}
+
+img {
+    display: flex;
+    height: 40vh;
+    width: 20vw;
+}
+
+.pokeCard {
+    background-image: url("https://vignette1.wikia.nocookie.net/pokemongo/images/d/d1/Pokedex_Background.png/revision/latest?cb=20160720022003");
+    margin-top: 41px;
+    margin-left: 69px;
+    display: flex;
+    align-items: center;
+    width: 32vw;
+    height: 31vw;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.pokedex {
+    background-image: url("https://wallpaperaccess.com/full/5818321.jpg");
+    height: 100vh;
+    width: 39vw;
+    background-size: cover;
+    background-position: center;
+}
