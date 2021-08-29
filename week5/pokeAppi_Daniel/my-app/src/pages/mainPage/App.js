@@ -19,11 +19,13 @@ const App = () => {
 
   return (
     <div>
-      <div className="pokedex">
-        <div id="prueba">
-          <button id="randomButton" type="submit" onClick={getRandomPokemon}>Random</button>
-        </div>
-        <div>
+      <div className = "allContainer">
+        <div id = "pokedex">
+          <div className="randomButtonContainer">
+            <button  id="randomButton" type="submit" onClick={getRandomPokemon}>Random <br />Pokemon</button>
+          </div>
+          <div className="pokeCardContainer">
+          <div id = "pokeCard">
           {
             pokemon.id && (
               <div className="pokeCard">
@@ -32,6 +34,11 @@ const App = () => {
               </div>
             )
           }
+          </div>
+          </div>
+          <div className="inputcontainer">
+          <input type="text" />
+          </div>
         </div>
       </div>
     </div>

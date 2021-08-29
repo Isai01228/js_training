@@ -1,38 +1,58 @@
-#randomButton {
-    border: none;
-    border-radius: 50%;
-    text-align: center;
-    height: 12vh;
-    width: 7vw;
+.allContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
 }
 
-#pokeName {
-    font-size: 42px;
+.pokeCardContainer {
+    margin-left: 65px;
+    margin-top: 29px;
+    height: 580px;
+    width: 592px;
+}
+
+.randomButtonContainer {
+    height: 15%;
+    width: 96%;
+    display: flex;
+    align-items: center;
+}
+
+#pokedex {
+    background-image: url("https://wallpaperaccess.com/full/5818321.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 50%;
+}
+
+#randomButton {
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-left: 74px;
+    height: 115px;
+    width: 110px;
+    color: cornsilk;
+    background-color: cornflowerblue;
+}
+
+#pokeCard {
+    background-image: url("https://vignette1.wikia.nocookie.net/pokemongo/images/d/d1/Pokedex_Background.png/revision/latest?cb=20160720022003  ");
+    height: 100%;
+    width: 100%;
+    border: 3px solid black;
+    display: flex;
+    font-size: 26px;
+    justify-content: center;
     font-style: italic;
+    flex-direction: row;
+    align-items: center;
 }
 
 img {
-    display: flex;
-    height: 40vh;
-    width: 20vw;
+    height: 350px;
 }
 
-.pokeCard {
-    background-image: url("https://vignette1.wikia.nocookie.net/pokemongo/images/d/d1/Pokedex_Background.png/revision/latest?cb=20160720022003");
-    margin-top: 41px;
-    margin-left: 69px;
-    display: flex;
-    align-items: center;
-    width: 32vw;
-    height: 31vw;
-    flex-direction: column;
-    border: 1px solid black;
-}
-
-.pokedex {
-    background-image: url("https://wallpaperaccess.com/full/5818321.jpg");
-    height: 100vh;
-    width: 39vw;
-    background-size: cover;
-    background-position: center;
+html {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/01c1cad6-a54c-430a-a91c-d330b68403df/da5ucbm-78018326-2f14-452d-a8f3-4bc7fc0acb37.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAxYzFjYWQ2LWE1NGMtNDMwYS1hOTFjLWQzMzBiNjg0MDNkZlwvZGE1dWNibS03ODAxODMyNi0yZjE0LTQ1MmQtYThmMy00YmM3ZmMwYWNiMzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gZQb5m-qKUQYPDJEkDa9HG2Yeh-xnuYMsTCArk7J6X4");
 }
