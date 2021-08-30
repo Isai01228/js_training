@@ -36,8 +36,22 @@ const App = () => {
           }
           </div>
           </div>
-          <div className="inputcontainer">
-          <input type="text" />
+          <div className="inputContainer">
+          <input type="search"  id="inputPoke" placeholder="Search Pokemon"/>
+          <div className="searchButtonContainer"> 
+          <button type="submit" id="searchPoke">search</button>
+          </div>
+          </div>
+          <div className="infoContainer">
+          {
+            pokemon.id &&(
+              pokemon.types.map((type, i) => (
+              <div className="types"  key= {i} >
+              <h1> {type.type.name} </h1>
+              </div>
+            ))
+            )
+          }
           </div>
         </div>
       </div>
