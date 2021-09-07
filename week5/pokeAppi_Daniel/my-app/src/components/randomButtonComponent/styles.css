@@ -1,0 +1,19 @@
+.randomButtonContainer {
+    height: 160px;
+    width: 730px;
+    display: flex;
+    align-items: center;
+}
+
+#randomButton {
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-left: 74px;
+    height: 115px;
+    width: 110px;
+    color: black;
+    background-color: blue;
+    font-size: large;
+    font-family: serif;
+    cursor: pointer;
+}

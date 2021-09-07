@@ -1,0 +1,19 @@
+.pokeCardContainer {
+    margin-left: 65px;
+    margin-top: 29px;
+    height: 580px;
+    width: 592px;
+}
+
+#pokeCard {
+    background-image: url("https://vignette1.wikia.nocookie.net/pokemongo/images/d/d1/Pokedex_Background.png/revision/latest?cb=20160720022003  ");
+    height: 100%;
+    width: 100%;
+    border: 3px solid black;
+    display: flex;
+    font-size: 26px;
+    justify-content: center;
+    font-style: italic;
+    flex-direction: row;
+    align-items: center;
+}

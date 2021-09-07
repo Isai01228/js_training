@@ -1,61 +1,50 @@
 import React, {useState} from 'react'
-import {getPokemonById} from '../../helpers/getPoke'
+import RandomButton from '../../components/randomButtonComponent/randomButton'
+import SearchPokeByName from '../../components/searchPokeByNameComponent/searchPokeByName'
+import PokeCard from '../../components/pokeCardComponent/pokeCard'
+import PokeInfo from '../../components/pokeInfoComponent/pokeInfo'
+import {getPokemonName, getPokemonById} from '../../services/pokemonServices'
 
 import './styles.css'
 
 const App = () => {
-  const [pokemon, setPokemon] = useState('')
+  const [pokemon, setPokemon] = useState([])
+  const [input, setInput] = useState('')
 
   const generateRandomNumber = () => {
-    return Math.floor(Math.random() * (800))
-  }
+    return Math.floor(Math.random() * (898))
+}
 
   const getRandomPokemon = async () => {
     const randomNumber = await generateRandomNumber()
     const pokeInfo = await getPokemonById(randomNumber)
     console.log(pokeInfo);
     setPokemon(pokeInfo)
+}
+
+  const searchHandler = (e) => {
+  setInput(e.target.value.toLowerCase())
+  console.log(e.target.value);
+  }
+
+  const handleForm = async(e) => {
+    e.preventDefault()
+    const searchRes =  await getPokemonName(input)
+    setPokemon(searchRes)
+    console.log(searchRes);
   }
 
   return (
     <div>
       <div className = "allContainer">
         <div id = "pokedex">
-          <div className="randomButtonContainer">
-            <button  id="randomButton" type="submit" onClick={getRandomPokemon}>Random <br />Pokemon</button>
-          </div>
-          <div className="pokeCardContainer">
-          <div id = "pokeCard">
-          {
-            pokemon.id && (
-              <div className="pokeCard">
-              <h1 id="pokeName" > {pokemon.name} - {pokemon.id} </h1>
-              <img src={pokemon.sprites.front_default} alt=""/>
-              </div>
-            )
-          }
-          </div>
-          </div>
-          <div className="inputContainer">
-          <input type="search"  id="inputPoke" placeholder="Search Pokemon"/>
-          <div className="searchButtonContainer"> 
-          <button type="submit" id="searchPoke">search</button>
-          </div>
-          </div>
-          <div className="infoContainer">
-          {
-            pokemon.id &&(
-              pokemon.types.map((type, i) => (
-              <div className="types"  key= {i} >
-              <h1> {type.type.name} </h1>
-              </div>
-            ))
-            )
-          }
+        <RandomButton getRandomPokemon={getRandomPokemon}/>
+          <PokeCard pokemon={pokemon} />
+          <SearchPokeByName searchHandler={searchHandler} handleForm={handleForm} />
+          <PokeInfo pokemon={pokemon} />
           </div>
         </div>
       </div>
-    </div>
   ) 
 }
 

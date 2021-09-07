@@ -1,0 +1,40 @@
+.formContainer {
+    margin-top: 50px;
+    margin-left: 50px;
+    height: 49px;
+    width: 635px;
+    display: flex;
+    flex-direction: row;
+    background-color: greenyellow;
+    border-radius: 50px;
+}
+
+#searchPoke {
+    height: 100%;
+    width: 100%;
+}
+
+#inputSearch {
+    border: 3px solid black;
+    width: 70%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: greenyellow;
+    color: black;
+    font-size: xx-large;
+    font-style: italic;
+    font-family: fantasy;
+    text-align: center;
+}
+
+#searchButton {
+    width: 20%;
+    height: 100%;
+    border: 3px solid black;
+    border-radius: 50px;
+    background-color: greenyellow;
+    color: black;
+    font-size: larger;
+    font-style: italic;
+    font-family: monospace;
+}
